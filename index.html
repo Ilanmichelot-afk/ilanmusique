@@ -271,7 +271,7 @@ input.sk{-webkit-appearance:none;appearance:none;width:100%;height:22px;backgrou
 .gchip i{width:8px;height:8px;border-radius:50%;background:#9aa}.gchip.ok i{background:#30d158;box-shadow:0 0 10px #30d158}.gchip.wait i{background:#ff9f0a;animation:pu 1s infinite}.gchip.err i{background:#ff3b5c}
 .gfine{margin:16px 6px 0;font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.62);text-align:center}
 
-/* --- REGLES DYNAMIQUES LIQUID GLASS --- */
+/* --- ADAPTATION DES THÈMES & DU LIQUID GLASS --- */
 :root {
   --glass-blur: 20px;
   --glass-opacity: 0.18;
@@ -279,73 +279,100 @@ input.sk{-webkit-appearance:none;appearance:none;width:100%;height:22px;backgrou
 }
 
 /* Application du verre translucide */
-#mini, #tabs, .card, .sheet, .st, .box, .seg, input, textarea, select {
+#mini, #tabs, .sheet, .st, .box, .seg, input, textarea, select {
   background: rgba(255, 255, 255, var(--glass-opacity)) !important;
   backdrop-filter: blur(var(--glass-blur)) !important;
   -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
   border: 1px solid var(--glass-border) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* --- THEMES STYLES --- */
-/* Thème Kawaii / Gaming Néon */
-[data-theme="kawaii"] {
-  --bg: #0d021a;
-  --fg: #ff79c6;
-  --card: #19092b;
-  --mut: #bd93f9;
-  --red: #ff2d95;
-  --pc: #bd93f9;
-  --line: rgba(255, 121, 198, 0.25);
-  --bar: rgba(25, 9, 43, 0.85);
-  --sheet: #19092b;
-}
-
-/* Thème OLED Noir Pur */
-[data-theme="oled"] {
-  --bg: #000000;
-  --fg: #ffffff;
-  --card: #121212;
-  --mut: #888888;
-  --red: #1ed760;
-  --pc: #333333;
-  --line: #222222;
-  --bar: #000000;
-  --sheet: #121212;
-}
-
- /* Nettoyage des cartes de musique */
+/* Cartes de musique (S'adaptent à la couleur du texte du thème) */
 .card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  backdrop-filter: blur(var(--glass-blur, 15px)) !important;
-  -webkit-backdrop-filter: blur(var(--glass-blur, 15px)) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: var(--card) !important;
+  backdrop-filter: blur(var(--glass-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+  border: 1px solid var(--line) !important;
   border-radius: 16px !important;
   padding: 10px !important;
-  overflow: hidden;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.card:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  transform: translateY(-4px);
-}
-
-.card .im {
-  border-radius: 12px !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
-  margin-bottom: 10px !important;
 }
 
 .card .t {
-  color: #fff !important;
+  color: var(--fg) !important;
   font-weight: 700 !important;
-  padding: 2px 4px 0 !important;
 }
 
 .card .s {
-  color: rgba(255, 255, 255, 0.6) !important;
-  padding: 0 4px 4px !important;
+  color: var(--mut) !important;
+}
+
+/* Modale des Paramètres & Textes */
+.sheet h3, .sheet label, .sheet .t, .srow .t {
+  color: var(--fg) !important;
+}
+
+.sheet .s, .srow .s {
+  color: var(--mut) !important;
+  opacity: 0.8;
+}
+
+/* Boutons segmentés (Auto, Sombre, Kawaii...) */
+.seg {
+  background: var(--card) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.seg button {
+  color: var(--mut) !important;
+  font-weight: 600;
+}
+
+.seg button.on {
+  background: var(--fg) !important;
+  color: var(--bg) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* THÈME CLAIR (Lumière) */
+:root[data-theme="light"], @media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="kawaii"]):not([data-theme="oled"]) {
+    --bg: #f2f2f7;
+    --fg: #1c1c1e;
+    --mut: #6c6c70;
+    --card: rgba(255, 255, 255, 0.7);
+    --line: rgba(0, 0, 0, 0.1);
+    --sheet: #ffffff;
+  }
+}
+
+/* THÈME SOMBRE */
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --fg: #ffffff;
+  --mut: #b3b3b3;
+  --card: rgba(40, 40, 40, 0.6);
+  --line: rgba(255, 255, 255, 0.15);
+  --sheet: #1e1e1e;
+}
+
+/* THÈME KAWAII GAMING */
+:root[data-theme="kawaii"] {
+  --bg: #0d021a;
+  --fg: #ff79c6;
+  --mut: #bd93f9;
+  --card: rgba(25, 9, 43, 0.7);
+  --line: rgba(255, 121, 198, 0.25);
+  --sheet: #19092b;
+}
+
+/* THÈME OLED NOIR PUR */
+:root[data-theme="oled"] {
+  --bg: #000000;
+  --fg: #ffffff;
+  --mut: #888888;
+  --card: rgba(20, 20, 20, 0.8);
+  --line: #222222;
+  --sheet: #121212;
 }
 </style>
 </head>
