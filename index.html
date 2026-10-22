@@ -140,7 +140,7 @@ body.pause #fcv{transform:scale(.84)}
 #ly,#ql{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:none;mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent)}
 #ly::-webkit-scrollbar,#ql::-webkit-scrollbar{display:none}
 #ly::before,#ly::after{content:"";display:block;height:25vh}
-#ly p{display:flex;flex-wrap:wrap;column-gap:.28em;font-size:var(--lys,28px);font-weight:700;line-height:1.18;color:#ffffff59;padding:9px 4px;opacity:.51;filter:blur(var(--b,0px));transition:opacity .2s cubic-bezier(.61,1,.88,1),filter .35s ease;cursor:pointer}
+#ly p{display:flex;flex-wrap:wrap;column-gap:.28em;font-size:var(--lys,28px);font-weight:700;line-height:1.18;color:#ffffff59;padding:9px 24px;opacity:.51}
 #ly p.past{opacity:.497}
 #ly p.on{opacity:1}
 #ly p.r{justify-content:flex-end;text-align:right}
@@ -373,6 +373,19 @@ input.sk{-webkit-appearance:none;appearance:none;width:100%;height:22px;backgrou
   --card: rgba(20, 20, 20, 0.8);
   --line: #222222;
   --sheet: #121212;
+}
+
+ /* Alignement et visibilité complète des paroles sur PC */
+#full[data-m="pc-split"] #ly {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  padding-left: 20px !important;
+  text-align: left !important;
+}
+
+#full[data-m="pc-split"] #ly p {
+  justify-content: flex-start !important;
+  padding-left: 10px !important;
 }
 </style>
 </head>
