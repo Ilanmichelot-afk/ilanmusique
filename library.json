@@ -1,0 +1,300 @@
+{
+ "settings": {
+  "name": "ILANOVA",
+  "tagline": "Ta musique, sans limites.",
+  "footer": "Créé avec Claude et Ilan",
+  "logo": ""
+ },
+ "tracks": [
+  {
+   "id": "funk-abnormal-dj-v12-0t4v",
+   "title": "FUNK ABNORMAL",
+   "artist": "DJ V12",
+   "audio": "musiques/funk-abnormal-dj-v12-0t4v.mp3",
+   "cover": "covers/funk-abnormal-dj-v12-0t4v.jpg",
+   "lrc": "paroles/funk-abnormal-dj-v12-0t4v.lrc"
+  },
+  {
+   "id": "megalovania-u0z6",
+   "title": "MEGALOVANIA",
+   "artist": "Toby Fox",
+   "audio": "musiques/megalovania-u0z6.mp3",
+   "cover": "covers/megalovania-u0z6.png",
+   "lrc": "paroles/megalovania-u0z6.lrc"
+  },
+  {
+   "id": "fille-a-papa-zzrf",
+   "title": "Fille à Papa",
+   "artist": "La rvfleuze - Vacra",
+   "audio": "musiques/fille-a-papa-zzrf.mp3",
+   "cover": "covers/fille-a-papa-zzrf.jpg",
+   "lrc": "paroles/fille-a-papa-zzrf.lrc"
+  },
+  {
+   "id": "tiakola-melo-decale-pp3p",
+   "title": "Mélo Décalé",
+   "artist": "Tiakola",
+   "audio": "musiques/tiakola-melo-decale-pp3p.mp3",
+   "cover": "covers/tiakola-melo-decale-pp3p.jpg",
+   "lrc": "paroles/tiakola-melo-decale-pp3p.lrc"
+  },
+  {
+   "id": "kulturr-meli-melo-clip-officie-1svz",
+   "title": "Méli-Mélo",
+   "artist": "Kulturr",
+   "audio": "musiques/kulturr-meli-melo-clip-officie-1svz.mp3",
+   "cover": "covers/kulturr-meli-melo-clip-officie-1svz.png",
+   "lrc": "paroles/kulturr-meli-melo-clip-officie-1svz.lrc"
+  },
+  {
+   "id": "parlu-u67o",
+   "title": "PARLU",
+   "artist": "La Rvfleuze",
+   "audio": "musiques/parlu-u67o.mp3",
+   "cover": "covers/parlu-u67o.jpg",
+   "lrc": "paroles/parlu-u67o.lrc"
+  },
+  {
+   "id": "na-za-desole-uvyh",
+   "title": "Na Za Désolé",
+   "artist": "Black Cat",
+   "audio": "musiques/na-za-desole-uvyh.mp3",
+   "cover": "covers/na-za-desole-uvyh.jpg",
+   "lrc": "paroles/na-za-desole-uvyh.lrc"
+  },
+  {
+   "id": "mauvais-djo-maladie-cheveux-bl-69vi",
+   "title": "Maladie",
+   "artist": "Mauvais djo",
+   "audio": "musiques/mauvais-djo-maladie-cheveux-bl-69vi.mp3",
+   "cover": "covers/mauvais-djo-maladie-cheveux-bl-69vi.jpg",
+   "lrc": "paroles/mauvais-djo-maladie-cheveux-bl-69vi.lrc"
+  },
+  {
+   "id": "triangle-des-bermudes-ft-l2b-a-phb7",
+   "title": "A l'Aise",
+   "artist": "Triangle des bermudes - L2B",
+   "audio": "musiques/triangle-des-bermudes-ft-l2b-a-phb7.mp3",
+   "cover": "covers/triangle-des-bermudes-ft-l2b-a-phb7.jpg",
+   "lrc": "paroles/triangle-des-bermudes-ft-l2b-a-phb7.lrc"
+  },
+  {
+   "id": "marwa-loud-ft-tk13002-fendi-ga-invm",
+   "title": "Fendi Gang",
+   "artist": "TK - Marwa Loud",
+   "audio": "musiques/marwa-loud-ft-tk13002-fendi-ga-invm.mp3",
+   "cover": "covers/marwa-loud-ft-tk13002-fendi-ga-invm.jpg",
+   "lrc": "paroles/marwa-loud-ft-tk13002-fendi-ga-invm.lrc"
+  },
+  {
+   "id": "la-rvfleuze-argent-sale-a-colo-jjo3",
+   "title": "Argent Sale",
+   "artist": "La Rvfleuze",
+   "audio": "musiques/la-rvfleuze-argent-sale-a-colo-jjo3.mp3",
+   "cover": "covers/la-rvfleuze-argent-sale-a-colo-jjo3.jpg",
+   "lrc": "paroles/la-rvfleuze-argent-sale-a-colo-jjo3.lrc"
+  },
+  {
+   "id": "mauvais-djo-wagyu-clip-officie-d1oy",
+   "title": "WAGYU",
+   "artist": "Mauvais Djo",
+   "audio": "musiques/mauvais-djo-wagyu-clip-officie-d1oy.mp3",
+   "cover": "covers/mauvais-djo-wagyu-clip-officie-d1oy.jpg",
+   "lrc": "paroles/mauvais-djo-wagyu-clip-officie-d1oy.lrc"
+  },
+  {
+   "id": "jul-parfum-quartier-album-grat-c3me",
+   "title": "Parfum Quartier",
+   "artist": "Jul",
+   "audio": "musiques/jul-parfum-quartier-album-grat-c3me.mp3",
+   "cover": "covers/jul-parfum-quartier-album-grat-c3me.jpg",
+   "lrc": "paroles/jul-parfum-quartier-album-grat-c3me.lrc"
+  },
+  {
+   "id": "fennecxx-dj-alex-spooky-super--y2rk",
+   "title": "SPOOKY (Super Slowed)",
+   "artist": "Fennecxx - DJ ALEX",
+   "audio": "musiques/fennecxx-dj-alex-spooky-super--y2rk.mp3",
+   "cover": "covers/fennecxx-dj-alex-spooky-super--y2rk.jpg",
+   "lrc": "paroles/fennecxx-dj-alex-spooky-super--y2rk.lrc"
+  },
+  {
+   "id": "undertale-finale-but-its-by-ha-cv3r",
+   "title": "Finale",
+   "artist": "Undertale",
+   "audio": "musiques/undertale-finale-but-its-by-ha-cv3r.mp3",
+   "cover": "covers/undertale-finale-but-its-by-ha-cv3r.jpg",
+   "lrc": ""
+  },
+  {
+   "id": "and-the-seraphim-wept-azure-tw-yhpk",
+   "title": "And The Seraphim Wept",
+   "artist": "D.Meletis",
+   "audio": "musiques/and-the-seraphim-wept-azure-tw-yhpk.mp3",
+   "cover": "covers/and-the-seraphim-wept-azure-tw-yhpk.jpg",
+   "lrc": ""
+  },
+  {
+   "id": "close-to-me-red-moonrise-mix-bmj6",
+   "title": "CLOSE TO ME",
+   "artist": "EPIC",
+   "audio": "musiques/close-to-me-red-moonrise-mix-bmj6.mp3",
+   "cover": "covers/close-to-me-red-moonrise-mix-bmj6.jpg",
+   "lrc": ""
+  },
+  {
+   "id": "stromae-papaoutai-official-vid-no96",
+   "title": "Papaoutai",
+   "artist": "Stromae",
+   "audio": "musiques/stromae-papaoutai-official-vid-no96.mp3",
+   "cover": "covers/stromae-papaoutai-official-vid-no96.jpg",
+   "lrc": "paroles/stromae-papaoutai-official-vid-no96.lrc"
+  },
+  {
+   "id": "franglish-ft-keblackofficiel-g-qevu",
+   "title": "Génération Impolie",
+   "artist": "Franglish et Keblack",
+   "audio": "musiques/franglish-ft-keblackofficiel-g-qevu.mp3",
+   "cover": "covers/franglish-ft-keblackofficiel-g-qevu.jpg",
+   "lrc": "paroles/franglish-ft-keblackofficiel-g-qevu.lrc"
+  },
+  {
+   "id": "jalouse-x3c6",
+   "title": "Jalouse",
+   "artist": "Werenoi",
+   "audio": "musiques/jalouse-x3c6.mp3",
+   "cover": "covers/jalouse-x3c6.jpg",
+   "lrc": "paroles/jalouse-x3c6.lrc"
+  },
+  {
+   "id": "poney-dxov",
+   "title": "Poney",
+   "artist": "Werenoi",
+   "audio": "musiques/poney-dxov.mp3",
+   "cover": "covers/poney-dxov.jpg",
+   "lrc": "paroles/poney-dxov.lrc"
+  },
+  {
+   "id": "sur-paname-spyj",
+   "title": "Sur Paname",
+   "artist": "PNL",
+   "audio": "musiques/sur-paname-spyj.mp3",
+   "cover": "covers/sur-paname-spyj.jpg",
+   "lrc": "paroles/sur-paname-spyj.lrc"
+  },
+  {
+   "id": "elle-t-a-tue-f3ek",
+   "title": "Elle t’a tué",
+   "artist": "Alonzo",
+   "audio": "musiques/elle-t-a-tue-f3ek.mp3",
+   "cover": "covers/elle-t-a-tue-f3ek.png",
+   "lrc": "paroles/elle-t-a-tue-f3ek.lrc"
+  },
+  {
+   "id": "onizuka-l2yo",
+   "title": "Onizuka",
+   "artist": "PNL",
+   "audio": "musiques/onizuka-l2yo.mp3",
+   "cover": "covers/onizuka-l2yo.jpg",
+   "lrc": "paroles/onizuka-l2yo.lrc"
+  },
+  {
+   "id": "hamza-mi-amor-visualizer-a7h5",
+   "title": "Mi amor",
+   "artist": "Hamza",
+   "audio": "musiques/hamza-mi-amor-visualizer-a7h5.mp3",
+   "cover": "covers/hamza-mi-amor-visualizer-a7h5.jpg",
+   "lrc": "paroles/hamza-mi-amor-visualizer-a7h5.lrc"
+  },
+  {
+   "id": "gradur-jamais-clip-officiel-pc2j",
+   "title": "Jamais",
+   "artist": "Gradur",
+   "audio": "musiques/gradur-jamais-clip-officiel-pc2j.mp3",
+   "cover": "covers/gradur-jamais-clip-officiel-pc2j.jpg",
+   "lrc": "paroles/gradur-jamais-clip-officiel-pc2j.lrc"
+  },
+  {
+   "id": "koba-lad-coffre-plein-ft-maes--oh6u",
+   "title": "COFFRE PLEIN",
+   "artist": "KOBA LAD",
+   "audio": "musiques/koba-lad-coffre-plein-ft-maes--oh6u.mp3",
+   "cover": "covers/koba-lad-coffre-plein-ft-maes--oh6u.jpg",
+   "lrc": "paroles/koba-lad-coffre-plein-ft-maes--oh6u.lrc"
+  },
+  {
+   "id": "werenoi-jamal-clip-officiel-x9b9",
+   "title": "Jamal",
+   "artist": "Werenoi",
+   "audio": "musiques/werenoi-jamal-clip-officiel-x9b9.mp3",
+   "cover": "covers/werenoi-jamal-clip-officiel-x9b9.jpg",
+   "lrc": "paroles/werenoi-jamal-clip-officiel-x9b9.lrc"
+  },
+  {
+   "id": "bambina-osc8",
+   "title": "Bambina",
+   "artist": "PNL",
+   "audio": "musiques/bambina-osc8.mp3",
+   "cover": "covers/bambina-osc8.jpg",
+   "lrc": "paroles/bambina-osc8.lrc"
+  },
+  {
+   "id": "lune-de-fiel-gwgv",
+   "title": "Lune de fiel",
+   "artist": "MZ - Marlo",
+   "audio": "musiques/lune-de-fiel-gwgv.mp3",
+   "cover": "covers/lune-de-fiel-gwgv.jpg",
+   "lrc": "paroles/lune-de-fiel-gwgv.lrc"
+  },
+  {
+   "id": "mz-toi-sur-moi-clip-officiel-h2vn",
+   "title": "Toi sur moi",
+   "artist": "MZ",
+   "audio": "musiques/mz-toi-sur-moi-clip-officiel-h2vn.mp3",
+   "cover": "covers/mz-toi-sur-moi-clip-officiel-h2vn.jpg",
+   "lrc": "paroles/mz-toi-sur-moi-clip-officiel-h2vn.lrc"
+  },
+  {
+   "id": "spotidownloader-com-california-udo4",
+   "title": "California",
+   "artist": "Queen House",
+   "audio": "musiques/spotidownloader-com-california-udo4.mp3",
+   "cover": "covers/spotidownloader-com-california-udo4.jpg",
+   "lrc": "paroles/spotidownloader-com-california-udo4.lrc"
+  },
+  {
+   "id": "rambo-goyard-b-m-s-by-my-side--z2hn",
+   "title": "B.M.S (by my side)",
+   "artist": "Rambo goyard",
+   "audio": "musiques/rambo-goyard-b-m-s-by-my-side--z2hn.mp3",
+   "cover": "covers/rambo-goyard-b-m-s-by-my-side--z2hn.jpg",
+   "lrc": "paroles/rambo-goyard-b-m-s-by-my-side--z2hn.lrc"
+  },
+  {
+   "id": "rnboi-nono-la-grinta-avec-moi--tu8y",
+   "title": "AVEC MOI",
+   "artist": "RnBoi, Nono La Grinta",
+   "audio": "musiques/rnboi-nono-la-grinta-avec-moi--tu8y.mp3",
+   "cover": "covers/rnboi-nono-la-grinta-avec-moi--tu8y.jpg",
+   "lrc": "paroles/rnboi-nono-la-grinta-avec-moi--tu8y.lrc"
+  },
+  {
+   "id": "rnboi-elle-voulait-clip-offici-49n9",
+   "title": "ELLE VOULAIT",
+   "artist": "RnBoi",
+   "audio": "musiques/rnboi-elle-voulait-clip-offici-49n9.mp3",
+   "cover": "covers/rnboi-elle-voulait-clip-offici-49n9.jpg",
+   "lrc": "paroles/rnboi-elle-voulait-clip-offici-49n9.lrc"
+  },
+  {
+   "id": "rnboi-mon-bebe-clip-officiel-k4yt",
+   "title": "MON BÉBÉ",
+   "artist": "RnBoi",
+   "audio": "musiques/rnboi-mon-bebe-clip-officiel-k4yt.mp3",
+   "cover": "covers/rnboi-mon-bebe-clip-officiel-k4yt.jpg",
+   "lrc": "paroles/rnboi-mon-bebe-clip-officiel-k4yt.lrc"
+  }
+ ],
+ "playlists": [],
+ "news": []
+}
