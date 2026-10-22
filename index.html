@@ -7,7 +7,6 @@
 <title>ILANOVA</title>
 <style>
 :root{--bg:#fff;--fg:#000;--mut:#8a8a8e;--card:#f2f2f7;--line:#0000001a;--bar:#fffffff2;--sheet:#fff;--red:#1ed760;--on:#000;--pc:#7a3cff}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121212;--fg:#fff;--mut:#b3b3b3;--card:#282828;--line:#ffffff1a;--bar:#000000f0;--sheet:#282828}}
 :root[data-theme=dark]{--bg:#121212;--fg:#fff;--mut:#b3b3b3;--card:#282828;--line:#ffffff1a;--bar:#000000f0;--sheet:#282828}
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;overflow-x:hidden}
@@ -140,7 +139,7 @@ body.pause #fcv{transform:scale(.84)}
 #ly,#ql{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:none;mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent)}
 #ly::-webkit-scrollbar,#ql::-webkit-scrollbar{display:none}
 #ly::before,#ly::after{content:"";display:block;height:25vh}
-#ly p{display:flex;flex-wrap:wrap;column-gap:.28em;font-size:var(--lys,28px);font-weight:700;line-height:1.18;color:#ffffff59;padding:9px 24px;opacity:.51}
+#ly p{display:flex;flex-wrap:wrap;column-gap:.28em;font-size:var(--lys,28px);font-weight:700;line-height:1.18;color:#ffffff59;padding:9px 4px;opacity:.51;filter:blur(var(--b,0px));transition:opacity .2s cubic-bezier(.61,1,.88,1),filter .35s ease;cursor:pointer}
 #ly p.past{opacity:.497}
 #ly p.on{opacity:1}
 #ly p.r{justify-content:flex-end;text-align:right}
@@ -270,123 +269,41 @@ input.sk{-webkit-appearance:none;appearance:none;width:100%;height:22px;backgrou
 .gchip{display:flex;align-items:center;justify-content:center;gap:8px;margin:6px auto 4px;padding:9px 14px;border-radius:30px;font-size:13px;width:fit-content;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
 .gchip i{width:8px;height:8px;border-radius:50%;background:#9aa}.gchip.ok i{background:#30d158;box-shadow:0 0 10px #30d158}.gchip.wait i{background:#ff9f0a;animation:pu 1s infinite}.gchip.err i{background:#ff3b5c}
 .gfine{margin:16px 6px 0;font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.62);text-align:center}
-
-/* --- ADAPTATION DES THÈMES & DU LIQUID GLASS --- */
-:root {
-  --glass-blur: 20px;
-  --glass-opacity: 0.18;
-  --glass-border: rgba(255, 255, 255, 0.2);
+/* ===== thèmes ===== */
+:root{--lg:.7;--gr:255,255,255;--ga:55%;--gs:#fff}
+:root[data-theme=dark]{--gs:#242428}
+:root[data-theme=deep]{--bg:#0a0e1a;--fg:#eef2ff;--mut:#8e9ab6;--card:#151c2e;--line:#ffffff17;--bar:#080c18f2;--sheet:#161d30;--gs:#18203a}
+:root[data-theme=oled]{--bg:#000;--fg:#fff;--mut:#9a9a9a;--card:#121212;--line:#ffffff14;--bar:#000;--sheet:#0e0e0e;--gs:#0a0a0a}
+:root[data-theme=light]{--bg:#fafafa;--fg:#111;--mut:#6b6b73;--card:#f0f0f3;--line:#0000001a;--bar:#fffffff2;--sheet:#fff;--gs:#fff;--gr:0,0,0;--ga:32%}
+:root[data-theme=kawaii]{--bg:#12062a;--fg:#fff;--mut:#cdb9ff;--card:#ffffff14;--line:#ff4fd833;--bar:#1a0a3af0;--sheet:#1d0c40;--gs:#2a1257}
+.thg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.th{display:flex;flex-direction:column;gap:6px;align-items:center;padding:7px 5px;border-radius:14px;border:2px solid transparent;background:var(--card)}
+.th i{display:block;width:100%;height:44px;border-radius:10px;border:1px solid var(--line)}
+.th span{font-size:11.5px;font-weight:600;text-align:center;line-height:1.2}.th.on{border-color:var(--red)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:calc(var(--lg)*.55);background:radial-gradient(60% 40% at 12% 0%,color-mix(in srgb,var(--red) 40%,transparent),transparent 70%),radial-gradient(50% 40% at 100% 20%,color-mix(in srgb,var(--red) 18%,transparent),transparent 70%)}
+:root[data-theme=light] body::before{background:radial-gradient(60% 40% at 10% 0%,#0a84ff22,transparent 70%),radial-gradient(50% 40% at 100% 15%,#ff2d9518,transparent 70%)}
+:root[data-theme=oled] body::before{display:none}
+:root[data-theme=kawaii] body::before{inset:-20%;opacity:1;background:radial-gradient(45% 40% at 15% 10%,#ff4fd866,transparent 70%),radial-gradient(40% 40% at 90% 15%,#22e6ff55,transparent 70%),radial-gradient(50% 45% at 50% 100%,#8a5cff77,transparent 70%);animation:kwf 16s ease-in-out infinite alternate}
+@keyframes kwf{to{transform:translate(4%,3%) scale(1.12)}}
+:root[data-theme=kawaii] header h1{background:linear-gradient(90deg,#ff4fd8,#8a5cff,#22e6ff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px #ff4fd899)}
+:root[data-theme=kawaii] h2{text-shadow:0 0 16px #ff4fd899}
+:root[data-theme=kawaii] .bigplay,:root[data-theme=kawaii] .btn.red{background:linear-gradient(135deg,#ff4fd8,#8a5cff 55%,#22e6ff);color:#fff;box-shadow:0 0 22px #ff4fd899}
+:root[data-theme=kawaii] .qt,:root[data-theme=kawaii] .card .im{box-shadow:0 0 0 1px #ff4fd844,0 0 18px #8a5cff44}
+:root[data-theme=kawaii] #tabs button.on{color:var(--red);text-shadow:0 0 12px var(--red)}
+/* ===== Liquid Glass : tout est piloté par --lg (0 = off, 1 = complet) ===== */
+@supports (color:color-mix(in srgb,red,blue)){
+#tabs,.hbt,.sheet,#toast,.qt,.seg,.chip{background:color-mix(in srgb,var(--gs) calc(100% - var(--lg)*var(--ga)),transparent);-webkit-backdrop-filter:blur(calc(var(--lg)*26px)) saturate(calc(1 + var(--lg)*.9));backdrop-filter:blur(calc(var(--lg)*26px)) saturate(calc(1 + var(--lg)*.9));border-color:rgba(var(--gr),calc(.05 + var(--lg)*.17));box-shadow:inset 0 1px 0 rgba(255,255,255,calc(var(--lg)*.42)),0 10px 34px rgba(0,0,0,calc(var(--lg)*.22))}
+.hbt,.sheet,#toast{border:1px solid rgba(var(--gr),calc(.05 + var(--lg)*.17))}
+#toast{color:var(--fg)}.sheet,.qt{position:relative}
+#mini{background:color-mix(in srgb,color-mix(in srgb,var(--pc) 85%,#000) calc(100% - var(--lg)*38%),transparent);-webkit-backdrop-filter:blur(calc(var(--lg)*26px)) saturate(calc(1 + var(--lg)*.9));backdrop-filter:blur(calc(var(--lg)*26px)) saturate(calc(1 + var(--lg)*.9))}
+#tabs::before,#mini::before,.hbt::before,.sheet::before,#toast::before,.qt::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,calc(var(--lg)*.22)),transparent 38%,transparent 70%,rgba(255,255,255,calc(var(--lg)*.07)))}
+#auth,#modal{-webkit-backdrop-filter:blur(calc(var(--lg)*9px));backdrop-filter:blur(calc(var(--lg)*9px))}
+.glass{background:linear-gradient(145deg,rgba(255,255,255,calc(.04 + var(--lg)*.23)),rgba(255,255,255,calc(.02 + var(--lg)*.05)) 55%,rgba(255,255,255,calc(.03 + var(--lg)*.12))),color-mix(in srgb,#16121f calc(100% - var(--lg)*80%),transparent);-webkit-backdrop-filter:blur(calc(var(--lg)*34px)) saturate(calc(1 + var(--lg)*.9));backdrop-filter:blur(calc(var(--lg)*34px)) saturate(calc(1 + var(--lg)*.9))}
+.glass::before,.glass::after{opacity:var(--lg)}
+.lg0 #tabs,.lg0 #mini,.lg0 .hbt,.lg0 .sheet,.lg0 #toast,.lg0 .qt,.lg0 .seg,.lg0 .chip,.lg0 .glass,.lg0 #auth,.lg0 #modal{-webkit-backdrop-filter:none;backdrop-filter:none}
+.lg0 #tabs::before,.lg0 #mini::before,.lg0 .hbt::before,.lg0 .sheet::before,.lg0 #toast::before,.lg0 .qt::before{display:none}
 }
-
-/* Application du verre translucide */
-#mini, #tabs, .sheet, .st, .box, .seg, input, textarea, select {
-  background: rgba(255, 255, 255, var(--glass-opacity)) !important;
-  backdrop-filter: blur(var(--glass-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
-  border: 1px solid var(--glass-border) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Cartes de musique (S'adaptent à la couleur du texte du thème) */
-.card {
-  background: var(--card) !important;
-  backdrop-filter: blur(var(--glass-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 16px !important;
-  padding: 10px !important;
-}
-
-.card .t {
-  color: var(--fg) !important;
-  font-weight: 700 !important;
-}
-
-.card .s {
-  color: var(--mut) !important;
-}
-
-/* Modale des Paramètres & Textes */
-.sheet h3, .sheet label, .sheet .t, .srow .t {
-  color: var(--fg) !important;
-}
-
-.sheet .s, .srow .s {
-  color: var(--mut) !important;
-  opacity: 0.8;
-}
-
-/* Boutons segmentés (Auto, Sombre, Kawaii...) */
-.seg {
-  background: var(--card) !important;
-  border: 1px solid var(--line) !important;
-}
-
-.seg button {
-  color: var(--mut) !important;
-  font-weight: 600;
-}
-
-.seg button.on {
-  background: var(--fg) !important;
-  color: var(--bg) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* THÈME CLAIR (Lumière) */
-:root[data-theme="light"], @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]):not([data-theme="kawaii"]):not([data-theme="oled"]) {
-    --bg: #f2f2f7;
-    --fg: #1c1c1e;
-    --mut: #6c6c70;
-    --card: rgba(255, 255, 255, 0.7);
-    --line: rgba(0, 0, 0, 0.1);
-    --sheet: #ffffff;
-  }
-}
-
-/* THÈME SOMBRE */
-:root[data-theme="dark"] {
-  --bg: #121212;
-  --fg: #ffffff;
-  --mut: #b3b3b3;
-  --card: rgba(40, 40, 40, 0.6);
-  --line: rgba(255, 255, 255, 0.15);
-  --sheet: #1e1e1e;
-}
-
-/* THÈME KAWAII GAMING */
-:root[data-theme="kawaii"] {
-  --bg: #0d021a;
-  --fg: #ff79c6;
-  --mut: #bd93f9;
-  --card: rgba(25, 9, 43, 0.7);
-  --line: rgba(255, 121, 198, 0.25);
-  --sheet: #19092b;
-}
-
-/* THÈME OLED NOIR PUR */
-:root[data-theme="oled"] {
-  --bg: #000000;
-  --fg: #ffffff;
-  --mut: #888888;
-  --card: rgba(20, 20, 20, 0.8);
-  --line: #222222;
-  --sheet: #121212;
-}
-
- /* Alignement et visibilité complète des paroles sur PC */
-#full[data-m="pc-split"] #ly {
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-  padding-left: 20px !important;
-  text-align: left !important;
-}
-
-#full[data-m="pc-split"] #ly p {
-  justify-content: flex-start !important;
-  padding-left: 10px !important;
-}
+:root[data-theme=light] #modal{background:#00000033}
 </style>
 </head>
 <body class="pause">
@@ -472,25 +389,20 @@ function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clea
 let S={tracks:[],pls:[],news:[],set:{name:'ILANOVA',tagline:'Ta musique, sans limites.',footer:'',logo:''},preview:false};
 let mine=[];try{mine=JSON.parse(localStorage.getItem('ilanova_pl')||'[]')}catch(e){}
 const saveMine=()=>{try{localStorage.setItem('ilanova_pl',JSON.stringify(mine))}catch(e){toast('Stockage plein')}scheduleSync()};
-const CFG0={theme:'dark',acc:'#1ed760',lys:28,glassBlur:20,blur:true,anim:true,react:false,rate:1,resume:true,sort:'add'};
+const CFG0={theme:'dark',acc:'#1ed760',accOn:false,lg:70,lysp:30,blur:true,anim:true,react:false,rate:1,resume:true,sort:'add'};
 let cfg={...CFG0};try{const s3=localStorage.getItem('ilanova_cfg3');cfg={...CFG0,...JSON.parse(s3||localStorage.getItem('ilanova_cfg2')||'{}')};if(!s3)cfg.react=false}catch(e){}
 const saveCfg=()=>{try{localStorage.setItem('ilanova_cfg3',JSON.stringify(cfg))}catch(e){}};
 let lyMaxWord=8;
-function applyCfg(){
-  const r=document.documentElement;
-  if(cfg.theme==='auto') r.removeAttribute('data-theme');
-  else r.setAttribute('data-theme', cfg.theme);
-
-  // Application de la valeur du slider Liquid Glass
-  const blurVal = cfg.glassBlur ?? 20;
-  r.style.setProperty('--glass-blur', blurVal + 'px');
-  r.style.setProperty('--glass-opacity', (blurVal / 120).toFixed(2));
-
-  r.style.setProperty('--red', cfg.acc);
-  r.style.setProperty('--lys', (cfg.lys || 28) + 'px');
-  r.classList.toggle('noblur', !cfg.blur);
-  r.classList.toggle('noanim', !cfg.anim);
-}
+const THEMES={dark:{acc:'#1ed760',c:'#121212'},deep:{acc:'#6c8cff',c:'#0a0e1a'},oled:{acc:'#1ed760',c:'#000000'},light:{acc:'#111111',c:'#fafafa'},kawaii:{acc:'#ff4fd8',c:'#12062a'}};
+const themeKey=()=>cfg.theme==='auto'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):(THEMES[cfg.theme]?cfg.theme:'dark');
+function applyCfg(){const r=document.documentElement,tk=themeKey(),acc=cfg.accOn?cfg.acc:THEMES[tk].acc;
+  r.setAttribute('data-theme',tk);r.style.setProperty('--red',acc);
+  {const h=acc.replace('#','');const L=(parseInt(h.slice(0,2),16)*.299+parseInt(h.slice(2,4),16)*.587+parseInt(h.slice(4,6),16)*.114)/255;r.style.setProperty('--on',L>.5?'#000':'#fff')}
+  r.style.setProperty('--lg',(cfg.lg/100).toFixed(2));r.classList.toggle('lg0',cfg.lg<=0);
+  applyLys();try{au.defaultPlaybackRate=cfg.rate;au.playbackRate=cfg.rate}catch(e){}
+  r.classList.toggle('noblur',!cfg.blur);r.classList.toggle('noanim',!cfg.anim);
+  const m=document.querySelector('meta[name=theme-color]');if(m)m.content=THEMES[tk].c}
+try{matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(cfg.theme==='auto')applyCfg()})}catch(e){}
 applyCfg();
 function idbGet(k){return new Promise(res=>{try{const r=indexedDB.open('ilanova',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onerror=()=>res();r.onsuccess=()=>{const q=r.result.transaction('kv').objectStore('kv').get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>res()}}catch(e){res()}})}
 async function load(){
@@ -615,47 +527,23 @@ function newsDot(){const n=newsSorted();let seen='';try{seen=localStorage.getIte
 function openNews(){const n=newsSorted();
   modal('<h3>Actualités</h3>'+(n.length?n.map(x=>`<div class="news"><b>${esc(x.title||'')}</b><div class="s">${esc(fmtD(x.date))}</div><p>${esc(x.text||'')}</p></div>`).join(''):'<div class="empty">Rien de nouveau pour l’instant.</div>')+'<div class="acts"><button class="btn red" data-act="close">Fermer</button></div>');
   try{localStorage.setItem('ilanova_seen',n.length?n[0].id:'')}catch(e){}$('#nbtn').classList.remove('new')}
-const ACCS=['#1ed760','#ff2d95','#7a3cff','#0a84ff','#ff9f0a','#fa2d48'];
+const ACCS=['#1ed760','#ff4fd8','#7a3cff','#0a84ff','#22e6ff','#ff9f0a','#fa2d48'];
+const TH=[['auto','Auto','linear-gradient(135deg,#121212 50%,#fafafa 50%)'],['dark','Noir Spotify','#121212'],['deep','Sombre profond','#0a0e1a'],['oled','OLED pur noir','#000'],['light','Minimaliste clair','#fafafa'],['kawaii','Kawaii · Gaming','linear-gradient(135deg,#ff4fd8,#8a5cff 55%,#22e6ff)']];
 function openCfg(){
   const seg=(k,o)=>`<div class="seg">${o.map(x=>`<button data-act="cs" data-k="${k}" data-v="${x[0]}" class="${String(cfg[k])===String(x[0])?'on':''}">${x[1]}</button>`).join('')}</div>`;
   const tg=(k,l,d)=>`<div class="srow"><div><div class="t">${l}</div><div class="s" style="white-space:normal">${d}</div></div><button class="tg ${cfg[k]?'on':''}" data-act="ct" data-k="${k}" aria-label="${l}"></button></div>`;
-  
-  modal(`<h3>Paramètres</h3>
-  <label>Thème visuel</label>
-  ${seg('theme',[['auto','Auto'],['dark','Sombre'],['kawaii','Kawaii Gaming'],['oled','OLED Noir']])}
-  
-  <label>Intensité Liquid Glass (Flou & Verre)</label>
-  <div style="display:flex;align-items:center;gap:12px;">
-    <input type="range" id="glass-range" min="0" max="40" value="${cfg.glassBlur ?? 20}" style="flex:1">
-    <span id="glass-val" style="font-weight:bold;min-width:35px">${cfg.glassBlur ?? 20}px</span>
-  </div>
-
-  <label>Couleur d'accentuation</label>
-  <div class="sw">${ACCS.map(c=>`<i data-act="cs" data-k="acc" data-v="${c}" class="${cfg.acc===c?'on':''}" style="background:${c}"></i>`).join('')}</div>
-
-  <label>Taille des paroles</label>
-  ${seg('lys',[[22,'Petite'],[28,'Normale'],[34,'Grande']])}
-
-  <div style="margin-top:8px">
-    ${tg('blur','Flou des paroles','Floute les lignes qui ne sont pas en cours.')}
-    ${tg('anim','Animations','Coupe-les si ton téléphone rame.')}
-  </div>
-
-  <div class="acts"><button class="btn alt" data-act="creset">Réinitialiser</button><button class="btn red" data-act="close">OK</button></div>`);
-
-  const range = $('#glass-range'), txt = $('#glass-val');
-  if(range){
-    range.oninput = e => {
-      const v = +e.target.value;
-      txt.textContent = v + 'px';
-      document.documentElement.style.setProperty('--glass-blur', v + 'px');
-      document.documentElement.style.setProperty('--glass-opacity', (v / 120).toFixed(2));
-      cfg.glassBlur = v;
-      saveCfg();
-    };
-  }
-}
-function wireCfg(){const r=$('#cfg-lys');if(r)r.oninput=e=>{cfg.lysp=+e.target.value;saveCfg();applyLys();const v=$('#lys-v');if(v)v.textContent=lysSize()}}
+  modal(`<h3>Paramètres</h3><label>Thème</label><div class="thg">${TH.map(t=>`<button data-act="cs" data-k="theme" data-v="${t[0]}" class="th ${cfg.theme===t[0]?'on':''}"><i style="background:${t[2]}"></i><span>${t[1]}</span></button>`).join('')}</div>
+  <label>Liquid Glass : <b id="lg-v">${cfg.lg<=0?'désactivé':cfg.lg+' %'}</b> · 0 % = sans flou, 100 % = effet complet</label><input type="range" id="cfg-lg" min="0" max="100" value="${cfg.lg}" style="width:100%;accent-color:var(--red)">
+  <label>Couleur d’accent</label><div class="sw"><i data-act="accauto" title="Couleur du thème" class="${cfg.accOn?'':'on'}" style="background:conic-gradient(#ff4fd8,#8a5cff,#22e6ff,#1ed760,#ff9f0a,#ff4fd8)"></i>${ACCS.map(c=>`<i data-act="cs" data-k="acc" data-v="${c}" class="${cfg.accOn&&cfg.acc===c?'on':''}" style="background:${c}"></i>`).join('')}</div>
+  <label>Taille des paroles : <b id="lys-v">${lysSize()}</b> px · le bout de la barre = le maximum qui tient à l’écran</label><input type="range" id="cfg-lys" min="0" max="100" value="${cfg.lysp}" style="width:100%;accent-color:var(--red)">
+  <div style="margin-top:8px">${tg('blur','Flou des paroles','Floute les lignes qui ne sont pas en cours.')}${tg('anim','Animations','Coupe-les si ton téléphone rame.')}${tg('react','Fond qui réagit au son','Option : le fond gonfle et vibre avec les basses. Désactivé par défaut.')}</div>
+  <label>Vitesse de lecture</label>${seg('rate',[[0.75,'0,75×'],[1,'1×'],[1.25,'1,25×'],[1.5,'1,5×']])}
+  <label>Minuteur de sommeil</label><div class="seg">${[[0,'Off'],[15,'15 min'],[30,'30 min'],[60,'1 h']].map(x=>`<button data-act="sleep" data-v="${x[0]}" class="${sleepMin===x[0]?'on':''}">${x[1]}</button>`).join('')}</div>
+  <div style="margin-top:8px">${tg('resume','Reprendre où j’en étais','Retrouve ton dernier titre et sa position à ton retour.')}</div>
+  <div style="margin-top:12px"><button class="btn alt" data-act="clrh">Effacer mon historique d’écoute</button></div>
+  <p class="s" style="margin-top:12px;line-height:1.6;white-space:normal">Raccourcis clavier (PC) : Espace lecture · ← → ±5 s · N / P titre suivant / précédent · M muet · S aléatoire · R répéter · L paroles · F plein écran · Échap fermer</p>
+  <div class="acts"><button class="btn alt" data-act="creset">Réinitialiser</button><button class="btn red" data-act="close">OK</button></div>`);wireCfg()}
+function wireCfg(){const g=$('#cfg-lg');if(g)g.oninput=e=>{cfg.lg=+e.target.value;saveCfg();applyCfg();const v=$('#lg-v');if(v)v.textContent=cfg.lg<=0?'désactivé':cfg.lg+' %'};const r=$('#cfg-lys');if(r)r.oninput=e=>{cfg.lysp=+e.target.value;saveCfg();applyLys();const v=$('#lys-v');if(v)v.textContent=lysSize()}}
 function setMode(m){const f=$('#full');f.dataset.m=m;$$('.bot button[data-m]').forEach(b=>b.classList.toggle('on',b.dataset.m===m));if(m==='q')rQ();setTimeout(applyLys,30)}
 function rQ(){CTX.qq=queue;$('#ql').innerHTML=queue.map((id,i)=>byId(id)?row(byId(id),'qq',i):'').join('');mark()}
 function act(a,el){
@@ -685,9 +573,10 @@ function act(a,el){
     case'rm':{const p=mine.find(x=>x.id===openId);p.ids=p.ids.filter(x=>x!==rid);saveMine();rPd()}break;
     case'artist':$('#q').value=el.dataset.a;$('#q').oninput({target:$('#q')});break;
     case'acct':openAcct();break;case'news':openNews();break;case'cfg':openCfg();break;case'close':closeM();break;
-    case'cs':{const k=el.dataset.k;cfg[k]=k==='rate'?+el.dataset.v:el.dataset.v;saveCfg();applyCfg();openCfg()}break;
+    case'cs':{const k=el.dataset.k;cfg[k]=k==='rate'?+el.dataset.v:el.dataset.v;if(k==='acc')cfg.accOn=true;saveCfg();applyCfg();openCfg()}break;
     case'ct':{const k=el.dataset.k;cfg[k]=!cfg[k];saveCfg();applyCfg();openCfg()}break;
     case'creset':cfg={...CFG0};saveCfg();applyCfg();openCfg();break;
+    case'accauto':cfg.accOn=false;saveCfg();applyCfg();openCfg();break;
     case'sort':cfg.sort=el.dataset.v;saveCfg();rHome();break;
     case'fav':toggleFav(el.dataset.t);closeM();break;
     case'favcur':if(cur)toggleFav(cur);break;
@@ -728,7 +617,7 @@ document.addEventListener('keydown',e=>{
   else if(k==='Escape'){if($('#auth').classList.contains('on'))closeAuth();else if($('#modal').classList.contains('on'))closeM();else closeFull()}});
 /* ================= COMPTE UTILISATEUR : Firebase Auth + Firestore ================= */
 /* 1) Colle ici la configuration de ton application web Firebase (console Firebase > Paramètres du projet > Tes applications) */
-const FIREBASE_CONFIG={apiKey:"",authDomain:"",projectId:"",storageBucket:"",messagingSenderId:"",appId:""};
+const FIREBASE_CONFIG={apiKey:"AIzaSyB16yhg1WoXUuAJf89aLTB5Fn7WfRED_WM",authDomain:"connection-5359a.firebaseapp.com",projectId:"connection-5359a",storageBucket:"connection-5359a.firebasestorage.app",messagingSenderId:"205320163950",appId:"1:205320163950:web:61f79fbe1c904756260c7f"};
 const fbReady=()=>!!(FIREBASE_CONFIG.apiKey&&FIREBASE_CONFIG.projectId&&FIREBASE_CONFIG.appId);
 let FB=null,me=null,unsub=null,syncT=0,lastRev=0,syncSt='',syncAt=0,authTab='in';
 async function fbLoad(){
