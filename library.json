@@ -7,76 +7,12 @@
  },
  "tracks": [
   {
-   "id": "funk-abnormal-dj-v12-0t4v",
-   "title": "FUNK ABNORMAL",
-   "artist": "DJ V12",
-   "audio": "musiques/funk-abnormal-dj-v12-0t4v.mp3",
-   "cover": "covers/funk-abnormal-dj-v12-0t4v.jpg",
-   "lrc": "paroles/funk-abnormal-dj-v12-0t4v.lrc"
-  },
-  {
-   "id": "megalovania-u0z6",
-   "title": "MEGALOVANIA",
-   "artist": "Toby Fox",
-   "audio": "musiques/megalovania-u0z6.mp3",
-   "cover": "covers/megalovania-u0z6.png",
-   "lrc": "paroles/megalovania-u0z6.lrc"
-  },
-  {
-   "id": "fille-a-papa-zzrf",
-   "title": "Fille à Papa",
-   "artist": "La rvfleuze - Vacra",
-   "audio": "musiques/fille-a-papa-zzrf.mp3",
-   "cover": "covers/fille-a-papa-zzrf.jpg",
-   "lrc": "paroles/fille-a-papa-zzrf.lrc"
-  },
-  {
-   "id": "tiakola-melo-decale-pp3p",
-   "title": "Mélo Décalé",
-   "artist": "Tiakola",
-   "audio": "musiques/tiakola-melo-decale-pp3p.mp3",
-   "cover": "covers/tiakola-melo-decale-pp3p.jpg",
-   "lrc": "paroles/tiakola-melo-decale-pp3p.lrc"
-  },
-  {
    "id": "kulturr-meli-melo-clip-officie-1svz",
    "title": "Méli-Mélo",
    "artist": "Kulturr",
    "audio": "musiques/kulturr-meli-melo-clip-officie-1svz.mp3",
    "cover": "covers/kulturr-meli-melo-clip-officie-1svz.png",
    "lrc": "paroles/kulturr-meli-melo-clip-officie-1svz.lrc"
-  },
-  {
-   "id": "parlu-u67o",
-   "title": "PARLU",
-   "artist": "La Rvfleuze",
-   "audio": "musiques/parlu-u67o.mp3",
-   "cover": "covers/parlu-u67o.jpg",
-   "lrc": "paroles/parlu-u67o.lrc"
-  },
-  {
-   "id": "na-za-desole-uvyh",
-   "title": "Na Za Désolé",
-   "artist": "Black Cat",
-   "audio": "musiques/na-za-desole-uvyh.mp3",
-   "cover": "covers/na-za-desole-uvyh.jpg",
-   "lrc": "paroles/na-za-desole-uvyh.lrc"
-  },
-  {
-   "id": "mauvais-djo-maladie-cheveux-bl-69vi",
-   "title": "Maladie",
-   "artist": "Mauvais djo",
-   "audio": "musiques/mauvais-djo-maladie-cheveux-bl-69vi.mp3",
-   "cover": "covers/mauvais-djo-maladie-cheveux-bl-69vi.jpg",
-   "lrc": "paroles/mauvais-djo-maladie-cheveux-bl-69vi.lrc"
-  },
-  {
-   "id": "triangle-des-bermudes-ft-l2b-a-phb7",
-   "title": "A l'Aise",
-   "artist": "Triangle des bermudes - L2B",
-   "audio": "musiques/triangle-des-bermudes-ft-l2b-a-phb7.mp3",
-   "cover": "covers/triangle-des-bermudes-ft-l2b-a-phb7.jpg",
-   "lrc": "paroles/triangle-des-bermudes-ft-l2b-a-phb7.lrc"
   },
   {
    "id": "marwa-loud-ft-tk13002-fendi-ga-invm",
@@ -95,14 +31,6 @@
    "lrc": "paroles/la-rvfleuze-argent-sale-a-colo-jjo3.lrc"
   },
   {
-   "id": "mauvais-djo-wagyu-clip-officie-d1oy",
-   "title": "WAGYU",
-   "artist": "Mauvais Djo",
-   "audio": "musiques/mauvais-djo-wagyu-clip-officie-d1oy.mp3",
-   "cover": "covers/mauvais-djo-wagyu-clip-officie-d1oy.jpg",
-   "lrc": "paroles/mauvais-djo-wagyu-clip-officie-d1oy.lrc"
-  },
-  {
    "id": "jul-parfum-quartier-album-grat-c3me",
    "title": "Parfum Quartier",
    "artist": "Jul",
@@ -119,14 +47,6 @@
    "lrc": "paroles/fennecxx-dj-alex-spooky-super--y2rk.lrc"
   },
   {
-   "id": "undertale-finale-but-its-by-ha-cv3r",
-   "title": "Finale",
-   "artist": "Undertale",
-   "audio": "musiques/undertale-finale-but-its-by-ha-cv3r.mp3",
-   "cover": "covers/undertale-finale-but-its-by-ha-cv3r.jpg",
-   "lrc": ""
-  },
-  {
    "id": "and-the-seraphim-wept-azure-tw-yhpk",
    "title": "And The Seraphim Wept",
    "artist": "D.Meletis",
@@ -141,14 +61,6 @@
    "audio": "musiques/close-to-me-red-moonrise-mix-bmj6.mp3",
    "cover": "covers/close-to-me-red-moonrise-mix-bmj6.jpg",
    "lrc": ""
-  },
-  {
-   "id": "stromae-papaoutai-official-vid-no96",
-   "title": "Papaoutai",
-   "artist": "Stromae",
-   "audio": "musiques/stromae-papaoutai-official-vid-no96.mp3",
-   "cover": "covers/stromae-papaoutai-official-vid-no96.jpg",
-   "lrc": "paroles/stromae-papaoutai-official-vid-no96.lrc"
   },
   {
    "id": "franglish-ft-keblackofficiel-g-qevu",
@@ -255,6 +167,86 @@
    "lrc": "paroles/mz-toi-sur-moi-clip-officiel-h2vn.lrc"
   },
   {
+   "id": "funk-abnormal-dj-v12-0t4v",
+   "title": "FUNK ABNORMAL",
+   "artist": "DJ V12",
+   "audio": "musiques/funk-abnormal-dj-v12-0t4v.mp3",
+   "cover": "covers/funk-abnormal-dj-v12-0t4v.jpg",
+   "lrc": "paroles/funk-abnormal-dj-v12-0t4v.lrc"
+  },
+  {
+   "id": "megalovania-u0z6",
+   "title": "MEGALOVANIA",
+   "artist": "Toby Fox",
+   "audio": "musiques/megalovania-u0z6.mp3",
+   "cover": "covers/megalovania-u0z6.png",
+   "lrc": "paroles/megalovania-u0z6.lrc"
+  },
+  {
+   "id": "fille-a-papa-zzrf",
+   "title": "Fille à Papa",
+   "artist": "La rvfleuze - Vacra",
+   "audio": "musiques/fille-a-papa-zzrf.mp3",
+   "cover": "covers/fille-a-papa-zzrf.jpg",
+   "lrc": "paroles/fille-a-papa-zzrf.lrc"
+  },
+  {
+   "id": "tiakola-melo-decale-pp3p",
+   "title": "Mélo Décalé",
+   "artist": "Tiakola",
+   "audio": "musiques/tiakola-melo-decale-pp3p.mp3",
+   "cover": "covers/tiakola-melo-decale-pp3p.jpg",
+   "lrc": "paroles/tiakola-melo-decale-pp3p.lrc"
+  },
+  {
+   "id": "parlu-u67o",
+   "title": "PARLU",
+   "artist": "La Rvfleuze",
+   "audio": "musiques/parlu-u67o.mp3",
+   "cover": "covers/parlu-u67o.jpg",
+   "lrc": "paroles/parlu-u67o.lrc"
+  },
+  {
+   "id": "na-za-desole-uvyh",
+   "title": "Na Za Désolé",
+   "artist": "Black Cat",
+   "audio": "musiques/na-za-desole-uvyh.mp3",
+   "cover": "covers/na-za-desole-uvyh.jpg",
+   "lrc": "paroles/na-za-desole-uvyh.lrc"
+  },
+  {
+   "id": "mauvais-djo-maladie-cheveux-bl-69vi",
+   "title": "Maladie",
+   "artist": "Mauvais djo",
+   "audio": "musiques/mauvais-djo-maladie-cheveux-bl-69vi.mp3",
+   "cover": "covers/mauvais-djo-maladie-cheveux-bl-69vi.jpg",
+   "lrc": "paroles/mauvais-djo-maladie-cheveux-bl-69vi.lrc"
+  },
+  {
+   "id": "mauvais-djo-wagyu-clip-officie-d1oy",
+   "title": "WAGYU",
+   "artist": "Mauvais Djo",
+   "audio": "musiques/mauvais-djo-wagyu-clip-officie-d1oy.mp3",
+   "cover": "covers/mauvais-djo-wagyu-clip-officie-d1oy.jpg",
+   "lrc": "paroles/mauvais-djo-wagyu-clip-officie-d1oy.lrc"
+  },
+  {
+   "id": "undertale-finale-but-its-by-ha-cv3r",
+   "title": "Finale",
+   "artist": "Undertale",
+   "audio": "musiques/undertale-finale-but-its-by-ha-cv3r.mp3",
+   "cover": "covers/undertale-finale-but-its-by-ha-cv3r.jpg",
+   "lrc": ""
+  },
+  {
+   "id": "stromae-papaoutai-official-vid-no96",
+   "title": "Papaoutai",
+   "artist": "Stromae",
+   "audio": "musiques/stromae-papaoutai-official-vid-no96.mp3",
+   "cover": "covers/stromae-papaoutai-official-vid-no96.jpg",
+   "lrc": "paroles/stromae-papaoutai-official-vid-no96.lrc"
+  },
+  {
    "id": "spotidownloader-com-california-udo4",
    "title": "California",
    "artist": "Queen House",
@@ -293,6 +285,22 @@
    "audio": "musiques/rnboi-mon-bebe-clip-officiel-k4yt.mp3",
    "cover": "covers/rnboi-mon-bebe-clip-officiel-k4yt.jpg",
    "lrc": "paroles/rnboi-mon-bebe-clip-officiel-k4yt.lrc"
+  },
+  {
+   "id": "gims-jme-tire-audio-6okq",
+   "title": "J'me tire",
+   "artist": "GIMS",
+   "audio": "musiques/gims-jme-tire-audio-6okq.mp3",
+   "cover": "covers/gims-jme-tire-audio-6okq.jpg",
+   "lrc": "paroles/gims-jme-tire-audio-6okq.lrc"
+  },
+  {
+   "id": "ou-aller-5s31",
+   "title": "Où aller",
+   "artist": "GIMS",
+   "audio": "musiques/ou-aller-5s31.mp3",
+   "cover": "covers/ou-aller-5s31.jpg",
+   "lrc": "paroles/ou-aller-5s31.lrc"
   }
  ],
  "playlists": [],
