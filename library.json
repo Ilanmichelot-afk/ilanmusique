@@ -301,6 +301,14 @@
    "audio": "musiques/ou-aller-5s31.mp3",
    "cover": "covers/ou-aller-5s31.jpg",
    "lrc": "paroles/ou-aller-5s31.lrc"
+  },
+  {
+   "id": "maitre-gims-zombie-audio-ex53",
+   "title": "Zombie",
+   "artist": "GIMS",
+   "audio": "musiques/maitre-gims-zombie-audio-ex53.mp3",
+   "cover": "covers/maitre-gims-zombie-audio-ex53.jpg",
+   "lrc": "paroles/maitre-gims-zombie-audio-ex53.lrc"
   }
  ],
  "playlists": [],
