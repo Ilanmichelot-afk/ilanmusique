@@ -309,6 +309,14 @@
    "audio": "musiques/maitre-gims-zombie-audio-ex53.mp3",
    "cover": "covers/maitre-gims-zombie-audio-ex53.jpg",
    "lrc": "paroles/maitre-gims-zombie-audio-ex53.lrc"
+  },
+  {
+   "id": "cherry-pie-bir-hakeim-9r74",
+   "title": "BIR HAKEIM",
+   "artist": "Cherry Pie",
+   "audio": "musiques/cherry-pie-bir-hakeim-9r74.mp3",
+   "cover": "covers/cherry-pie-bir-hakeim-9r74.jpg",
+   "lrc": "paroles/cherry-pie-bir-hakeim-9r74.lrc"
   }
  ],
  "playlists": [],
