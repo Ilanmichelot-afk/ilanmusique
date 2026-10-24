@@ -304,6 +304,9 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;op
 .lg0 #tabs::before,.lg0 #mini::before,.lg0 .hbt::before,.lg0 .sheet::before,.lg0 #toast::before,.lg0 .qt::before{display:none}
 }
 :root[data-theme=light] #modal{background:#00000033}
+.gck{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.88);cursor:pointer}
+.glass input[type=checkbox]{width:18px;height:18px;padding:0;margin:1px 0 0;flex:none;accent-color:var(--red);background:none;border:0;box-shadow:none}
+.gck a,.gfine a{color:#fff;text-decoration:underline}
 </style>
 </head>
 <body class="pause">
@@ -382,9 +385,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;op
 <div id="modal"><div class="sheet" id="sheet"></div></div>
 <div id="toast"></div>
 
- <footer style="text-align: center; padding: 15px; font-size: 12px; color: #888;">
-    <a href="mentions-legales.html" style="color: #888; text-decoration: underline;">Mentions légales & Confidentialité</a>
-</footer>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -633,7 +633,7 @@ async function fbLoad(){
   const B='https://www.gstatic.com/firebasejs/10.14.1/';
   const [app,A,F]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-auth.js'),import(B+'firebase-firestore.js')]);
   const a=app.initializeApp(FIREBASE_CONFIG);FB={app:a,auth:A.getAuth(a),db:F.getFirestore(a),A,F};return FB}
-const FBERR={'auth/invalid-email':'Adresse e-mail invalide.','auth/email-already-in-use':'Un compte existe déjà avec cette adresse e-mail.','auth/weak-password':'Mot de passe trop faible (6 caractères minimum).','auth/invalid-credential':'Adresse e-mail ou mot de passe incorrect.','auth/user-not-found':'Aucun compte avec cette adresse e-mail.','auth/wrong-password':'Mot de passe incorrect.','auth/too-many-requests':'Trop d’essais. Réessaie dans quelques minutes.','auth/popup-closed-by-user':'Fenêtre Google fermée avant la fin.','auth/cancelled-popup-request':'Connexion Google annulée.','auth/network-request-failed':'Problème de connexion internet.','auth/unauthorized-domain':'Ce site n’est pas autorisé dans Firebase (Authentication > Paramètres > Domaines autorisés).','auth/operation-not-allowed':'Cette méthode de connexion n’est pas activée dans Firebase.','auth/account-exists-with-different-credential':'Un compte existe déjà avec cette adresse e-mail via une autre méthode.','auth/user-disabled':'Ce compte a été désactivé.'};
+const FBERR={'auth/invalid-email':'Adresse e-mail invalide.','auth/email-already-in-use':'Un compte existe déjà avec cette adresse e-mail.','auth/weak-password':'Mot de passe trop faible (6 caractères minimum).','auth/invalid-credential':'Adresse e-mail ou mot de passe incorrect.','auth/user-not-found':'Aucun compte avec cette adresse e-mail.','auth/wrong-password':'Mot de passe incorrect.','auth/too-many-requests':'Trop d’essais. Réessaie dans quelques minutes.','auth/popup-closed-by-user':'Fenêtre Google fermée avant la fin.','auth/cancelled-popup-request':'Connexion Google annulée.','auth/network-request-failed':'Problème de connexion internet.','auth/unauthorized-domain':'Ce site n’est pas autorisé dans Firebase (Authentication > Paramètres > Domaines autorisés).','auth/operation-not-allowed':'Cette méthode de connexion n’est pas activée dans Firebase.','auth/account-exists-with-different-credential':'Un compte existe déjà avec cette adresse e-mail via une autre méthode.','auth/user-disabled':'Ce compte a été désactivé.','auth/requires-recent-login':'Confirme ton identité puis réessaie.','cancel':'Suppression annulée.'};
 const fbErr=e=>FBERR[e&&e.code]||('Une erreur est survenue ('+((e&&(e.code||e.message))||'inconnue')+').');
 /* --- bouton profil dans l'en-tête --- */
 function renderProfile(){const b=$('#pbtn');if(!b)return;const u=me;
@@ -674,6 +674,17 @@ async function logout(){if(!me)return;
   cloudStop();try{await FB.A.signOut(FB.auth)}catch(e){}
   me=null;mine=[];fav=[];try{localStorage.removeItem('ilanova_pl');localStorage.removeItem('ilanova_fav');localStorage.removeItem('ilanova_link')}catch(e){}
   closeAuth();renderProfile();refresh();if($('#v-home').classList.contains('on'))rHome();updFav();toast('Déconnecté · tes données restent sur ton compte')}
+async function reauth(){const u=FB.auth.currentUser,pid=(u.providerData[0]||{}).providerId;
+  if(pid==='password'){const pw=prompt('Pour confirmer, entre ton mot de passe :');if(!pw)throw{code:'cancel'};await FB.A.reauthenticateWithCredential(u,FB.A.EmailAuthProvider.credential(u.email,pw))}
+  else await FB.A.reauthenticateWithPopup(u,new FB.A.GoogleAuthProvider())}
+async function delAccount(){if(!me||!FB)return;
+  if(!confirm('Supprimer définitivement ton compte et tes données sauvegardées (playlists, favoris) ? Cette action est irréversible.'))return;
+  auBusy(true);
+  try{await reauth();cloudStop();try{await FB.F.deleteDoc(uref())}catch(e){}
+    await FB.A.deleteUser(FB.auth.currentUser);
+    me=null;mine=[];fav=[];try{['ilanova_pl','ilanova_fav','ilanova_link','ilanova_last'].forEach(k=>localStorage.removeItem(k))}catch(e){}
+    closeAuth();renderProfile();refresh();if($('#v-home').classList.contains('on'))rHome();updFav();toast('Compte supprimé')
+  }catch(e){auMsg(fbErr(e),'err');if(me)cloudStart(me)}auBusy(false)}
 /* --- fenêtre Liquid Glass --- */
 const GLOGO='<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
 const auField=(id,type,ph,ic,ac)=>'<label class="gf"><span class="gi">'+I(ic)+'</span><input id="'+id+'" type="'+type+'" placeholder="'+ph+'" autocomplete="'+ac+'"></label>';
@@ -686,7 +697,7 @@ function renderAuth(){const b=$('#authbox');let h='';
     h='<button class="gx" id="g-x" aria-label="Fermer">'+I('x')+'</button><div class="gcen">'+(me.photoURL?'<img class="gav" src="'+esc(me.photoURL)+'" alt="" referrerpolicy="no-referrer">':'<div class="gav ini">'+esc(n[0].toUpperCase())+'</div>')+'<h3>'+esc(n)+'</h3><div class="gsub">'+esc(me.email||'')+'</div></div>'
      +'<div class="gchip '+syncSt+'"><i></i>'+I('cloud')+'<span id="g-st">'+syncText()+'</span></div>'
      +'<div id="g-msg" class="gmsg" style="display:none"></div>'
-     +'<button class="gb" id="g-sync" type="button">Synchroniser maintenant</button><button class="gb gl" id="g-name" type="button">Modifier mon pseudo</button><button class="gb gl dng" id="g-out" type="button">'+I('out')+' Se déconnecter</button>'
+     +'<button class="gb" id="g-sync" type="button">Synchroniser maintenant</button><button class="gb gl" id="g-name" type="button">Modifier mon pseudo</button><button class="gb gl dng" id="g-out" type="button">'+I('out')+' Se déconnecter</button><button class="gb gl dng" id="g-del" type="button">Supprimer mon compte</button>'
      +'<p class="gfine">Tes playlists et tes titres likés sont sauvegardés sur ton compte et retrouvés sur tous tes appareils.</p>'}
   else{authTab=authTab==='up'?'up':'in';
     h='<button class="gx" id="g-x" aria-label="Fermer">'+I('x')+'</button><div class="gcen"><div class="gbrand">ILANOVA</div><div class="gsub">'+(authTab==='in'?'Content de te revoir':'Crée ton compte gratuit')+'</div></div>'
@@ -696,8 +707,8 @@ function renderAuth(){const b=$('#authbox');let h='';
      +'<button class="gg" id="g-go" type="button" style="margin-top:12px">'+GLOGO+'<span>Se connecter avec Google</span></button><div class="gor"><span>ou</span></div>'
      +(authTab==='in'
        ?'<form id="f-in" novalidate>'+auField('au-em','email','Adresse e-mail','mail','username')+auField('au-pw','password','Mot de passe','lock','current-password')+'<div class="gl2"><button type="button" id="g-forgot" class="glink">Mot de passe oublié ?</button></div><button class="gb" type="submit" id="g-sub">Se connecter</button></form>'
-       :'<form id="f-up" novalidate>'+auField('au-nm','text','Nom / Pseudo','user','nickname')+auField('au-em','email','Adresse e-mail','mail','email')+auField('au-pw','password','Mot de passe (6 caractères minimum)','lock','new-password')+'<button class="gb" type="submit" id="g-sub">Créer mon compte</button></form>')
-     +'<p class="gfine">Connecte-toi pour retrouver tes playlists et tes favoris sur tous tes appareils.</p>'}
+       :'<form id="f-up" novalidate>'+auField('au-nm','text','Nom / Pseudo','user','nickname')+auField('au-em','email','Adresse e-mail','mail','email')+auField('au-pw','password','Mot de passe (6 caractères minimum)','lock','new-password')+'<label class="gck"><input type="checkbox" id="au-ok"><span>J’accepte les <a href="mentions-legales.html" target="_blank" rel="noopener">mentions légales et la politique de confidentialité</a>.</span></label><button class="gb" type="submit" id="g-sub">Créer mon compte</button></form>')
+     +'<p class="gfine">Connecte-toi pour retrouver tes playlists et tes favoris sur tous tes appareils. <a href="mentions-legales.html" target="_blank" rel="noopener">Confidentialité</a></p>'}
   b.innerHTML=h;wireAuth()}
 function auMsg(t,k){const el=$('#g-msg');if(!el)return;el.textContent=t;el.className='gmsg '+(k||'');el.style.display='block'}
 function auBusy(v){['g-sub','g-go','g-sync'].forEach(id=>{const el=$('#'+id);if(el)el.disabled=v})}
@@ -708,7 +719,7 @@ function wireAuth(){const b=$('#authbox'),g=id=>b.querySelector('#'+id);
     g('g-sync').onclick=async()=>{auBusy(true);try{await pushNow();auMsg('Synchronisé.','ok')}catch(e){setSync('err');auMsg('Synchronisation impossible : vérifie les règles Firestore.','err')}auBusy(false)};
     g('g-name').onclick=async()=>{const n=(prompt('Ton nouveau pseudo ?',me.displayName||'')||'').trim();if(n.length<2||n.length>30){if(n)auMsg('Le pseudo doit faire entre 2 et 30 caractères.','err');return}
       try{await FB.A.updateProfile(me,{displayName:n});renderProfile();renderAuth();toast('Pseudo mis à jour')}catch(e){auMsg(fbErr(e),'err')}};
-    g('g-out').onclick=logout;return}
+    g('g-out').onclick=logout;g('g-del').onclick=delAccount;return}
   g('g-go').onclick=doGoogle;
   const fi=g('f-in'),fu=g('f-up');
   if(fi){fi.onsubmit=e=>{e.preventDefault();doLogin()};g('g-forgot').onclick=doReset}
@@ -721,8 +732,11 @@ async function doSignup(){if(!auCheck())return;const n=$('#au-nm').value.trim(),
   if(n.length<2||n.length>30){auMsg('Ton pseudo doit faire entre 2 et 30 caractères.','err');return}
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){auMsg('Adresse e-mail invalide.','err');return}
   if(pw.length<6){auMsg('Mot de passe trop court (6 caractères minimum).','err');return}
+  if(!$('#au-ok').checked){auMsg('Coche la case pour accepter la politique de confidentialité.','err');return}
   auBusy(true);try{const f=await fbLoad();const c=await f.A.createUserWithEmailAndPassword(f.auth,em,pw);await f.A.updateProfile(c.user,{displayName:n});me=f.auth.currentUser;renderProfile();toast('Bienvenue '+n+' !')}catch(e){auMsg(fbErr(e),'err')}auBusy(false)}
-async function doGoogle(){if(!auCheck())return;auBusy(true);
+async function doGoogle(){if(!auCheck())return;
+  if(authTab==='up'&&!$('#au-ok').checked){auMsg('Coche la case pour accepter la politique de confidentialité.','err');return}
+  auBusy(true);
   try{const f=await fbLoad(),p=new f.A.GoogleAuthProvider();p.setCustomParameters({prompt:'select_account'});
     try{await f.A.signInWithPopup(f.auth,p)}catch(e){if(['auth/popup-blocked','auth/operation-not-supported-in-this-environment','auth/web-storage-unsupported'].includes(e.code)){await f.A.signInWithRedirect(f.auth,p);return}throw e}
   }catch(e){auMsg(fbErr(e),'err')}auBusy(false)}
